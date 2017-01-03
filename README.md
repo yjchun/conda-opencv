@@ -1,3 +1,6 @@
+http://dhaneshr.net/2016/06/03/installing-opencv-2-4-x-with-ffmpeg-python-on-anaconda/
+
+
 conda-opencv
 ============
 This repository contains a conda recipe for automatically building the OpenCV Python package and uploading it to our anaconda repository, menpo. This recipe provides builds for Win32, Win64, OSX64 and Linux64 (Ubuntu 12.04 and above). **Due to limitations of OpenCV, only Python 2.7 is supported**.
