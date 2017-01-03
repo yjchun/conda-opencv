@@ -1,11 +1,11 @@
 package:
   name: opencv
-  version: 2.4.11
+  version: 2.4.13
 
 source:
-  fn: opencv-2.4.11.zip
-  url: http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.11/opencv-2.4.11.zip/download
-  sha1: d6e3048416d42213c204f89b9dfe39742f9a708c
+  fn: opencv-2.4.13.zip
+  url: http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.13/opencv-2.4.13.zip/download
+  sha1: 0c6e4d890f6252ae8feae0c92f397f63aaa41a08
 
 build:
   number: 1
