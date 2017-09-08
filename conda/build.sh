@@ -12,12 +12,14 @@ if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   TBB=""
   OPENMP="-DWITH_OPENMP=1"
   IS_OSX=0
+  CUDA="-DWITH_CUDA=1 -DENABLE_FAST_MATH=1 -DCUDA_FAST_MATH=1 -DWITH_CUBLAS=1"
 fi
 if [ "$(uname -s)" == "Darwin" ]; then
   IS_OSX=1
   DYNAMIC_EXT="dylib"
   OPENMP=""
   TBB="-DWITH_TBB=1 -DTBB_LIB_DIR=$LIBRARY_PATH -DTBB_INCLUDE_DIRS=$INCLUDE_PATH -DTBB_STDDEF_PATH=$INCLUDE_PATH/tbb/tbb_stddef.h"
+  CUDA=""
 fi
 
 export CFLAGS="-I$PREFIX/include -fPIC $CFLAGS"
@@ -41,7 +43,7 @@ cmake .. -G"$CMAKE_GENERATOR"                                            \
     -DPYTHON_INCLUDE_PATH=$PREFIX/include/python${PY_VER}                \
     -DPYTHON_LIBRARY=$PREFIX/lib/libpython${PY_VER}.$DYNAMIC_EXT         \
     -DPYTHON_PACKAGES_PATH=$SP_DIR                                       \
-    -DWITH_CUDA=0                                                        \
+    $CUDA \
     -DWITH_OPENCL=0                                                      \
     -DWITH_OPENNI=0                                                      \
     -DWITH_FFMPEG=1                                                      \
